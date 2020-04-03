@@ -1,0 +1,138 @@
+﻿@page
+@model PrivacyModel
+@{
+    ViewData["Title"] = "Employees";
+}
+<h1>@ViewData["Title"]</h1>
+
+<t1>All Employees</t1>
+<table class="table">
+    <tbody>
+    <div id="people">
+        @if (Model.Overtime != null & Model.Regular != null)
+        {
+            foreach (var employee in Model.Overtime)
+            {
+                <tr>
+                    <td>
+                        <p>@Html.DisplayFor(modelItem => employee.Name)</p>
+                    </td>
+                                    
+                    <td>
+                        <p>@Html.DisplayFor(modelItem => employee.HourlyWage)</p>
+                    </td>
+
+                    <td>
+                        <p>@Html.DisplayFor(modelItem => employee.HoursPerMonth)</p>
+                    </td>
+
+                </tr>
+            }
+            foreach (var employee in Model.Regular)
+            {
+                <tr>
+                    <td>
+                        <p>@Html.DisplayFor(modelItem => employee.Name)</p>
+                    </td>
+                                    
+                    <td>
+                        <p>@Html.DisplayFor(modelItem => employee.HourlyWage)</p>
+                    </td>
+
+                    <td>
+                        <p>@Html.DisplayFor(modelItem => employee.HoursPerMonth)</p>
+                    </td>
+
+                </tr>
+            }
+        }
+        <tr>
+            <td>Total Monthly Pay</td>
+            <td>
+                @{
+                            
+                    <p class="text-center"> @Html.DisplayFor(modelItem => Model.total)</p>
+                            
+                }
+            </td>
+        </tr>
+    </div>
+    </tbody>
+</table>
+
+<t1>Overtime Employees</t1>
+<table class="table">
+    <tbody>
+    <div id="people">
+        @if (Model.Overtime != null)
+        {
+            foreach (var employee in Model.Overtime)
+            {
+                <tr>
+                    <td>
+                        <p>@Html.DisplayFor(modelItem => employee.Name)</p>
+                    </td>
+                                    
+                    <td>
+                        <p>@Html.DisplayFor(modelItem => employee.HourlyWage)</p>
+                    </td>
+
+                    <td>
+                        <p>@Html.DisplayFor(modelItem => employee.HoursPerMonth)</p>
+                    </td>
+
+                </tr>
+            }
+        }
+        <tr>
+            <td>Total Monthly Pay</td>
+            <td>
+                @{
+                    
+                        <p class="text-center"> @Html.DisplayFor(modelItem => Model.totalOvertime)</p>
+                    
+                }
+            </td>
+        </tr>
+    </div>
+    
+    </tbody>
+</table>
+
+<t1>Regular Employees</t1>
+<table class="table">
+    <tbody>
+    <div id="people">
+        @if (Model.Regular != null)
+        {
+            foreach (var employee in Model.Regular)
+            {
+                <tr>
+                    <td>
+                        <p>@Html.DisplayFor(modelItem => employee.Name)</p>
+                    </td>
+                                    
+                    <td>
+                        <p>@Html.DisplayFor(modelItem => employee.HourlyWage)</p>
+                    </td>
+
+                    <td>
+                        <p>@Html.DisplayFor(modelItem => employee.HoursPerMonth)</p>
+                    </td>
+
+                </tr>
+            }
+        }
+        <tr>
+                    <td>Total Monthly Pay</td>
+                    <td>
+                        @{
+                            
+                                <p class="text-center"> @Html.DisplayFor(modelItem => Model.totalRegular)</p>
+                            
+                        }
+                    </td>
+                </tr>
+    </div>
+    </tbody>
+</table>

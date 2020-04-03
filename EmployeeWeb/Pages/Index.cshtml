@@ -1,0 +1,42 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <form method="post" asp-page-handler="Index">
+            <h1>Add an employee</h1>
+            <div class="col-sm-4 form-group">
+                <label asp-for="Name">
+                    Name
+                </label>
+                <span class="subtitle">
+                    <input type="text" asp-for="Name" class="form-control form-control-sm"/>
+                </span>
+                <span asp-validation-for="Name" class="text-danger"></span>
+                
+                <label asp-for="HourlyWage">
+                    Hourly Wage
+                </label>
+                <span class="subtitle">
+                    <input type="text" asp-for="HourlyWage" class="form-control form-control-sm"/>
+                </span>
+                <span asp-validation-for="HourlyWage" class="text-danger"></span>
+                
+                 <label asp-for="HoursPerMonth">
+                                    Hours Per Month
+                                </label>
+                                <span class="subtitle">
+                                    <input type="text" asp-for="HoursPerMonth" class="form-control form-control-sm"/>
+                                </span>
+                <span asp-validation-for="HoursPerMonth" class="text-danger"></span>
+                
+                
+                <div class="actions form-group">
+                    <input type="hidden"/>
+                    <button asp-area="" type="submit" class="btn btn-default mr-auto" >Add Employee</button>
+                </div>
+            </div>    
+        </form>
+</div>
